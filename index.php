@@ -170,10 +170,107 @@ $economies--;
 echo '<br>';
 echo $economies;
 
-/* les opérateurs combinés 
+/* les opérateurs combinés ou opérateurs d'affectation
 Ok c'est sympa de rajouter ou d'enlever 1 mais comment je fais si j'ai envie d'ajouter ou soustraire plus que 1 => je vais y arriver grâce aux opérateurs combinés
 Documentation : https://www.php.net/manual/fr/language.operators.assignment.php
 */
 
+$economies = 1000;
+$loyer = 600;
+$salaire = 1500;
+
+// Je veux mettre tout mon salaire dans mes économies
+
+$economies+=$salaire;
+
+echo '<br>';
+var_dump($economies);
+var_dump($salaire);
+echo '<br>';
+
+// Je veux retrancher mon loyer de mon salaire
+$salaire-=$loyer;
+var_dump($salaire);
+echo '<br>';
+
+/* LES CONDITIONS 
+
+Une condition vérifie la validité (vrai ou faux) d'une opération ou d'une instruction afin de réaliser des actions/opérations en conséquence.
+Pour réaliser une condition, on va utiliser les structures de contrôle
+Documentation : https://www.php.net/manual/fr/language.control-structures.php 
+
+Comment vérifie-t-on la validité d'une opération => pour cela je vais utiliser les opérateurs de comparaison
+Documentation : https://www.php.net/manual/fr/language.operators.comparison.php
+*/
+$string = '1';
+$integer = 1;
+
+// Comparaison avec IF et IF/ELSE
+if ($string === $integer){
+    echo 'coucou';
+} else {
+    echo 'c\'est des types différents';
+}
+
+if(5 < 3){
+    echo 'Je sais pas compter';
+}else {
+    echo 'Ca va je suis pas trop nulle en math';
+}
+
+$maturite = 3;
+$maceration = 12;
+
+if($maturite === 3){
+    echo 'C\'est bientôt le moment de récolter les fruits';
+}elseif($maturite > 12){
+    echo 'Attention, les fruits sont en train de pourrir';
+}elseif($maceration > 6){
+    echo 'C\'est l\'heure de goûter la petite liqueur';
+}elseif($maceration < 6){
+    echo 'Trop tôt pour boire la petite liqueur';
+}else{
+    echo 'On verra bien';
+}
+
+/* LES BOUCLES
+Elles nous permettes d'exécuter une MEME série d'opérations/instructions plusieurs fois tant que soit la condition est vrai ou bien tant nous avons d'éléments dans un tableau. Par exemple, si j'ai envie d'écrire 20 <li> dans mon html, je peux les créer via une boucle PHP
+
+En java 
+for (int i=1; i < 10; i++){
+    system.out.print(i);
+}
+
+En php
+Dans une boucle FOR, j'ai 3 instructions essentielles : 
+- initialisation
+-  condition
+- incrementation
+*/
+for($i=1; $i <=20; $i++){
+    echo '<li>Je suis un élément li</li>';
+}
+
+/* la boucle while permet de boucler tant que la condition définie est vraie */
+$economie = 5;
+
+while($economie < 100){
+    echo 'Je continue de travailler';
+    $economie+=20;
+    echo '<br>';
+}
+
+// Je veux boucler sur les éléments d'un tableau, pour cela je vais utiliser foreach
+var_dump($fruits);
+
+foreach($fruits as $fruit){
+    echo $fruit;
+    echo '<br>';
+}
+
+foreach($fruits as $index => $fruit){
+    echo $index.$fruit;
+    echo '<br>';
+}
 
 ?>
